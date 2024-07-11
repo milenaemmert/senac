@@ -1,30 +1,33 @@
-/*
-com 2 valores
-padding: top/bottom right/left
-com 3 valores
-padding: top right/left bottom
-com 4 valores
-padding: top right bottom left
-*/
-ul {
-    list-style: none;
+.container-principal__lista-tarefas {
+    max-width: 1024px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 16px;
+}
+
+.lista__tarefas {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
 }
 
 .tarefa {
-    /* width: 1024px; ⚠️Pensar sobre isso: para a próxima aula: pq está aumentando quando adiciono padding? */ 
-    border: 1px #5C5C5C solid;
+    border: 1px var(--cinza-tundora) solid;
     border-radius: 16px;
     padding: 16px;
 }
 
 .descricao__tarefa {
+    margin-top: 8px;
     display: flex;
-    gap: 20px;
+    gap: 16px;
     align-items: center;
 }
 
-h2 {
-    border-right: 1px #5C5C5C solid;
+.descricao__tarefa--titulo {
+    font-size: 20px;
+    font-weight: 700;
+    border-right: 1px solid var(--cinza-tundora);
     padding-right: 16px;
 }
 
@@ -33,27 +36,29 @@ h2 {
     gap: 8px;
 }
 
-.etiqueta {
-    border: 1px solid #B6B6B6;
-    color: #B6B6B6;
+.etiqueta, .etiqueta__prioridade {
+    display: flex;
+    align-items: center;
     padding: 4px 8px;
+    border: 1px solid var(--cinza-nobel);
     border-radius: 4px;
+    color: var(--cinza-nobel);
+    font-size: 12px;
 }
 
 .etiqueta__prioridade {
-    padding: 4px 8px;
-    border-radius: 4px;
-
+    border: none;
+    color: var(--branco);
 }
 
 .etiqueta--alta {
-    background-color: red;
+    background-color: var(--vermelho);
 }
 
 .etiqueta--media {
-    background-color: yellow;
+    background-color: var(--amarelo);
 }
 
 .etiqueta--baixa {
-    background-color: green;
+    background-color: var(--verde);
 }
