@@ -1,0 +1,59 @@
+/*
+com 2 valores
+padding: top/bottom right/left
+com 3 valores
+padding: top right/left bottom
+com 4 valores
+padding: top right bottom left
+*/
+ul {
+    list-style: none;
+}
+
+.tarefa {
+    /* width: 1024px; ⚠️Pensar sobre isso: para a próxima aula: pq está aumentando quando adiciono padding? */ 
+    border: 1px #5C5C5C solid;
+    border-radius: 16px;
+    padding: 16px;
+}
+
+.descricao__tarefa {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+h2 {
+    border-right: 1px #5C5C5C solid;
+    padding-right: 16px;
+}
+
+.etiquetas {
+    display: flex;
+    gap: 8px;
+}
+
+.etiqueta {
+    border: 1px solid #B6B6B6;
+    color: #B6B6B6;
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+.etiqueta__prioridade {
+    padding: 4px 8px;
+    border-radius: 4px;
+
+}
+
+.etiqueta--alta {
+    background-color: red;
+}
+
+.etiqueta--media {
+    background-color: yellow;
+}
+
+.etiqueta--baixa {
+    background-color: green;
+}
