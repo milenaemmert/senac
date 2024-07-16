@@ -1,27 +1,29 @@
-.container-principal__lista-tarefas {
-    max-width: 1024px;
-    width: 100%;
-    margin: 0 auto;
-    padding: 16px;
-}
-
 .lista__tarefas {
     display: flex;
     flex-direction: column;
     gap: 24px;
 }
 
-.tarefa {
-    border: 1px var(--cinza-tundora) solid;
+.lista-tarefas__titulo {
+    margin: 24px 0;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--cinza-tundora);
+}
+
+.container__tarefa {
+    border: 1px solid var(--cinza-tundora);
     border-radius: 16px;
     padding: 16px;
 }
 
-.descricao__tarefa {
+.container__tarefa--descricao {
     margin-top: 8px;
     display: flex;
     gap: 16px;
     align-items: center;
+    color: var(--cinza-escuro);
 }
 
 .descricao__tarefa--titulo {
@@ -31,7 +33,7 @@
     padding-right: 16px;
 }
 
-.etiquetas {
+.tarefas__etiquetas {
     display: flex;
     gap: 8px;
 }
@@ -51,14 +53,14 @@
     color: var(--branco);
 }
 
-.etiqueta--alta {
+.etiqueta__prioridade--alta {
     background-color: var(--vermelho);
 }
 
-.etiqueta--media {
+.etiqueta__prioridade--media {
     background-color: var(--amarelo);
 }
 
-.etiqueta--baixa {
+.etiqueta__prioridade--baixa {
     background-color: var(--verde);
 }
