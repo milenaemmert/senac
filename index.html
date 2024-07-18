@@ -4,16 +4,90 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Lista de tarefas</title>
-    
-    <link rel="stylesheet" href="base/global.css">
+    <link rel="stylesheet" href="base/global.css" />
   </head>
   <body>
-    <main class="container-principal__lista-tarefas">
-      <h1>Lista de tarefas</h1>
+    <div class="conteudo-principal">
+      <form id="formularioTarefas" class="formulario-tarefas">
+        <div class="formulario-tarefas--linha-inteira">
+          <div class="formulario-tarefas--linha-metade">
+            <div class="formulario-tarefas--coluna">
+              <label class="tituloTarefaForm">Título</label>
+              <input
+                id="tituloTarefaForm"
+                placeholder="Ex.: Revisar código crítico"
+                class="input--borda"
+              />
+            </div>
+          </div>
 
-      <ul id="listaDeTarefas" class="lista__tarefas"></ul>
-    </main>
+          <div class="formulario-tarefas--linha-metade">
+            <div class="formulario-tarefas--coluna">
+              <label for="prioridadeTarefaForm">Prioridade</label>
+              <select id="prioridadeTarefaForm" class="input--borda">
+                <option value="Alta">Alta</option>
+                <option value="Média">Média</option>
+                <option value="Baixa">Baixa</option>
+              </select>
+            </div>
 
-		<script src="app.js" type="module"></script>
+            <div class="formulario-tarefas--coluna">
+              <label for="dataTarefaForm">Data</label>
+              <input type="date" id="dataTarefaForm" class="input--borda" />
+            </div>
+          </div>
+        </div>
+
+        <div class="formulario-tarefas--linha-inteira">
+          <div class="formulario-tarefas--coluna">
+            <label for="descricaoTarefaForm">Descrição</label>
+            <textarea
+              id="descricaoTarefaForm"
+              placeholder="Revisar bugs críticos no módulo principal."
+              class="input-textarea input--borda"
+            ></textarea>
+          </div>
+
+          <div class="formulario-tarefas--coluna">
+            <label for="responsavelTarefaForm">Responsável(is):</label>
+            <div class="container__checkbox">
+              <div class="container__checkbox--item">
+                <input type="checkbox" id="cb1" />
+                <label for="cb1">André</label>
+              </div>
+              <div class="container__checkbox--item">
+                <input type="checkbox" id="cb2" />
+                <label for="cb2">Clodomilson</label>
+              </div>
+              <div class="container__checkbox--item">
+                <input type="checkbox" id="cb3" />
+                <label for="cb3">Tarik</label>
+              </div>
+              <div class="container__checkbox--item">
+                <input type="checkbox" id="cb4" />
+                <label for="cb4">Vinícius</label>
+              </div>
+              <div class="container__checkbox--item">
+                <input type="checkbox" id="cb5" />
+                <label for="cb5">William</label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="formulario-tarefas--linha-inteira">
+          <button class="formulario-tarefas__botao" type="button">Limpar</button>
+          <button class="formulario-tarefas__botao" id="botaoAdicionar">
+            Adicionar
+          </button>
+        </div>
+      </form>
+
+      <main>
+        <h1 class="lista-tarefas__titulo">Lista de tarefas</h1>
+        <ul id="listaDeTarefas" class="lista__tarefas"></ul>
+      </main>
+    </div>
+    <script src="js/index.js" type="module"></script>
   </body>
 </html>
