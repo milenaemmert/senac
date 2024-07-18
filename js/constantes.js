@@ -34,6 +34,13 @@ export const TAREFAS = [
     data: '12/08/2024',
     responsavel: ['Alice', 'Carlos'],
   },
+  {
+    titulo: 'Implementar autenticação',
+    descricao: 'Adicionar sistema de login seguro.',
+    prioridade: 'Média',
+    data: '12/08/2024',
+    responsavel: ['Alice', 'Carlos'],
+  }
 ]
 
 export const PRIORIDADES = ['Alta', 'Média', 'Baixa']
