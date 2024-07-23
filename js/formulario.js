@@ -1,4 +1,4 @@
-import { PRIORIDADES, TAREFAS } from "./constantes.js"
+import { PRIORIDADES } from "./constantes.js"
 import { criarTarefa } from "./listaDeTarefas.js"
 
 export function criarPrioridades() {
@@ -38,11 +38,14 @@ export function pegarDadosDoFormulario(e) {
         responsavel: checkboxSelecionados,
     }
 
-    TAREFAS.push(novaTarefa)
-    document.getElementById('listaDeTarefas').innerHTML = ''
-    criarTarefa()
+    const tarefasAtualizadas = JSON.parse(localStorage.getItem('tarefas')) || []
 
-    console.log(TAREFAS)
+    tarefasAtualizadas.push(novaTarefa)
+
+    localStorage.setItem('tarefas', JSON.stringify(tarefasAtualizadas))
+
+    criarTarefa()
+    limparFormulario()
 }
 
 function formatarData(data) {
@@ -62,5 +65,8 @@ export function limparFormulario() {
     dataTarefa.value = ''
     descricaoTarefa.value = ''
 
-    //desafio -> limpar os checkboxes também!!
+    const checkboxes = document.querySelectorAll('[data-responsavel]')
+    checkboxes.forEach(checkbox => {
+        checkbox.checked = false
+    })
 }

@@ -1,12 +1,14 @@
-import { TAREFAS } from './constantes.js'
-
 export function criarTarefa() {
+  const tarefas = JSON.parse(localStorage.getItem('tarefas')) || []
   const listaDeTarefas = document.getElementById('listaDeTarefas')
 
-  ordenarListaDeTarefasPorData()
-  ordenarListaDeTarefasPorPrioridade()
+  ordenarListaDeTarefasPorData(tarefas)
+  ordenarListaDeTarefasPorPrioridade(tarefas)
 
-  TAREFAS.map((tarefa) => {
+  //desafio => não precisar "zerar" minha ul
+  document.getElementById('listaDeTarefas').innerHTML = ''
+
+  tarefas.map((tarefa) => {
     const li = document.createElement('li')
     li.classList = 'container__tarefa'
 
@@ -43,22 +45,22 @@ function alterarCorDaEtiquetaPrioridade() {
   })
 }
 
-function ordenarListaDeTarefasPorPrioridade() {
+function ordenarListaDeTarefasPorPrioridade(tarefas) {
   const prioridadeMapeamento = {
     Alta: 1,
     Média: 2,
     Baixa: 3,
   }
 
-  TAREFAS.sort((a, b) => {
+  tarefas.sort((a, b) => {
     return (
       prioridadeMapeamento[a.prioridade] - prioridadeMapeamento[b.prioridade]
     )
   })
 }
 
-function ordenarListaDeTarefasPorData() {
-  TAREFAS.sort((a, b) => {
+function ordenarListaDeTarefasPorData(tarefas) {
+  tarefas.sort((a, b) => {
     return converterData(a.data) - converterData(b.data)
   })
 }
