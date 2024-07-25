@@ -31,6 +31,7 @@ export function pegarDadosDoFormulario(e) {
     })
 
     const novaTarefa = {
+        id: Date.now(),
         titulo: tituloTarefa,
         descricao: descricaoTarefa,
         prioridade: prioridadeTarefa,

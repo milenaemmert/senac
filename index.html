@@ -17,6 +17,9 @@
                 id="tituloTarefaForm"
                 placeholder="Ex.: Revisar código crítico"
                 class="input--borda"
+                required
+                minlength="5"
+                maxlength="30"
               />
             </div>
           </div>
@@ -31,7 +34,7 @@
 
             <div class="formulario-tarefas--coluna">
               <label for="dataTarefaForm">Data</label>
-              <input type="date" id="dataTarefaForm" class="input--borda" />
+              <input type="date" id="dataTarefaForm" class="input--borda" required/>
             </div>
           </div>
         </div>
@@ -43,6 +46,8 @@
               id="descricaoTarefaForm"
               placeholder="Revisar bugs críticos no módulo principal."
               class="input-textarea input--borda"
+              required
+              maxlength="150"
             ></textarea>
           </div>
 
@@ -62,11 +67,15 @@
                 <label for="cb3">Tarik</label>
               </div>
               <div class="container__checkbox--item">
-                <input type="checkbox" id="cb4" data-responsavel />
+                <input type="checkbox"  data-responsavel />
+                <label for="cb5">Valtemir</label>
+              </div>
+              <div class="container__checkbox--item">
+                <input type="checkbox"  data-responsavel />
                 <label for="cb4">Vinícius</label>
               </div>
               <div class="container__checkbox--item">
-                <input type="checkbox" id="cb5" data-responsavel />
+                <input type="checkbox"  data-responsavel />
                 <label for="cb5">William</label>
               </div>
             </div>

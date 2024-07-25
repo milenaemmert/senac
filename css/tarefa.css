@@ -13,9 +13,19 @@
 }
 
 .container__tarefa {
+    display: flex;
+    align-items: flex-start;
+    gap: 32px;
     border: 1px solid var(--cinza-tundora);
-    border-radius: 16px;
     padding: 16px;
+    border-radius: 16px;
+}
+
+.conteudo__tarefa {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    flex-grow: 1;
 }
 
 .container__tarefa--descricao {
@@ -46,6 +56,23 @@
     border-radius: 4px;
     color: var(--cinza-nobel);
     font-size: 12px;
+}
+
+.tarefa__botao-deletar {
+    background-color: var(--vermelho);
+    padding: 8px;
+    border-radius: 10px;
+    border: none;
+    transition: all .25s;
+}
+
+.tarefa__botao-deletar:hover {
+    transform: scale(1.05);
+}
+
+.tarefa__botao-deletar__icon {
+    width: 20px;
+    color: var(--branco);
 }
 
 .etiqueta__prioridade {
