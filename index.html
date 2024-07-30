@@ -28,7 +28,7 @@
             <div class="formulario-tarefas--coluna">
               <label for="prioridadeTarefaForm">Prioridade</label>
               <select id="prioridadeTarefaForm" class="input--borda">
-                
+                <!-- As opções serão preenchidas dinamicamente -->
               </select>
             </div>
 
@@ -67,16 +67,16 @@
                 <label for="cb3">Tarik</label>
               </div>
               <div class="container__checkbox--item">
-                <input type="checkbox"  data-responsavel />
-                <label for="cb5">Valtemir</label>
+                <input type="checkbox" id="cb4" data-responsavel />
+                <label for="cb4">Valtemir</label>
               </div>
               <div class="container__checkbox--item">
-                <input type="checkbox"  data-responsavel />
-                <label for="cb4">Vinícius</label>
+                <input type="checkbox" id="cb5" data-responsavel />
+                <label for="cb5">Vinícius</label>
               </div>
               <div class="container__checkbox--item">
-                <input type="checkbox"  data-responsavel />
-                <label for="cb5">William</label>
+                <input type="checkbox" id="cb6" data-responsavel />
+                <label for="cb6">William</label>
               </div>
             </div>
           </div>
@@ -84,7 +84,7 @@
 
         <div class="formulario-tarefas--linha-inteira">
           <button class="formulario-tarefas__botao" type="button" id="botaoLimpar">Limpar</button>
-          <button class="formulario-tarefas__botao" id="botaoAdicionar">
+          <button class="formulario-tarefas__botao" type="submit" id="botaoAdicionar">
             Adicionar
           </button>
         </div>
