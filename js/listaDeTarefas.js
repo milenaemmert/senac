@@ -46,7 +46,9 @@ export function criarTarefa() {
     alterarCorDaEtiquetaPrioridade()
   })
 }
+//pegarTarefasDaApi()
 
+//deletarTarefaDaApi()
 export function deletarTarefa(id) {
   const tarefas =  JSON.parse(localStorage.getItem('tarefas')) || []
   const tarefasFiltradas = tarefas.filter((tarefa) => tarefa.id !== id)

@@ -1,5 +1,6 @@
 import { PRIORIDADES } from "./constantes.js"
 import { criarTarefa } from "./listaDeTarefas.js"
+import { postarTarefaNaApi } from "./api.js"
 
 export function criarPrioridades() {
     const prioridadeSelect = document.getElementById('prioridadeTarefaForm')
@@ -38,6 +39,8 @@ export function pegarDadosDoFormulario(e) {
         data: dataTarefa,
         responsavel: checkboxSelecionados,
     }
+
+    //postarTarefaNaApi(tituloTarefa, descricaoTarefa, prioridadeTarefa, dataTarefa, checkboxSelecionados)
 
     const tarefasAtualizadas = JSON.parse(localStorage.getItem('tarefas')) || []
 
