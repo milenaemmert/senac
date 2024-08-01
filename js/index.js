@@ -1,10 +1,9 @@
-import { criarTarefa } from './listaDeTarefas.js'
+import { listarTarefasNaTela } from './listaDeTarefas.js'
 import { criarPrioridades, pegarDadosDoFormulario, limparFormulario } from './formulario.js'
 import { pegarTarefasDaApi } from './api.js'
 
 criarPrioridades()
-criarTarefa()
-pegarTarefasDaApi()
+listarTarefasNaTela()
 
 document.querySelector('#formularioTarefas').addEventListener('submit', pegarDadosDoFormulario)
 document.querySelector('#botaoLimpar').addEventListener('click', limparFormulario)

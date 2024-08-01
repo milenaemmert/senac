@@ -1,5 +1,5 @@
 import { PRIORIDADES } from "./constantes.js"
-import { criarTarefa } from "./listaDeTarefas.js"
+import { listarTarefasNaTela } from "./listaDeTarefas.js"
 import { postarTarefaNaApi } from "./api.js"
 
 export function criarPrioridades() {
@@ -26,29 +26,20 @@ export function pegarDadosDoFormulario(e) {
 
     checkboxes.forEach(checkbox => {
         if(checkbox.checked) {
-            const labelCheckbox = document.querySelector(`label[for=${checkbox.id}`).textContent
+            const labelCheckbox = document.querySelector(`label[for=${checkbox.id}]`).textContent
             checkboxSelecionados.push(labelCheckbox)
         }
     })
 
-    const novaTarefa = {
-        id: Date.now(),
-        titulo: tituloTarefa,
-        descricao: descricaoTarefa,
-        prioridade: prioridadeTarefa,
-        data: dataTarefa,
-        responsavel: checkboxSelecionados,
-    }
+    postarTarefaNaApi(
+        tituloTarefa,
+        descricaoTarefa,
+        prioridadeTarefa,
+        dataTarefa,
+        checkboxSelecionados
+    )
 
-    //postarTarefaNaApi(tituloTarefa, descricaoTarefa, prioridadeTarefa, dataTarefa, checkboxSelecionados)
-
-    const tarefasAtualizadas = JSON.parse(localStorage.getItem('tarefas')) || []
-
-    tarefasAtualizadas.push(novaTarefa)
-
-    localStorage.setItem('tarefas', JSON.stringify(tarefasAtualizadas))
-
-    criarTarefa()
+    listarTarefasNaTela()
     limparFormulario()
 }
 

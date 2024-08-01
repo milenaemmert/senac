@@ -1,30 +1,24 @@
-export function criarTarefa() {
-  const tarefas = JSON.parse(localStorage.getItem('tarefas')) || []
-  const listaDeTarefas = document.getElementById('listaDeTarefas')
+import { pegarTarefasDaApi, deletarTarefaDaApi } from "./api.js"
 
-  ordenarListaDeTarefasPorData(tarefas)
-  ordenarListaDeTarefasPorPrioridade(tarefas)
+export function criarTarefa(id, titulo, descricao, prioridade, data, responsaveis) {
+  console.log(responsaveis)
+  const li = document.createElement('li')
+  li.classList = 'container__tarefa'
+  li.id = id
 
-  //desafio => não precisar "zerar" minha ul
-  document.getElementById('listaDeTarefas').innerHTML = ''
-
-  tarefas.map((tarefa) => {
-    const li = document.createElement('li')
-    li.classList = 'container__tarefa'
-
-    li.innerHTML = `
+  li.innerHTML = `
       <div class="conteudo__tarefa">
         <div class="tarefas__etiquetas">
-          <div class="etiqueta__prioridade">${tarefa.prioridade}</div>
-          <div class="etiqueta">${tarefa.data}</div>
-          ${tarefa.responsavel
+          <div class="etiqueta__prioridade">${prioridade}</div>
+          <div class="etiqueta">${data}</div>
+          ${responsaveis
             .map((resp) => `<div class="etiqueta">${resp}</div>`)
             .join('')}
         </div>
 
         <div class="container__tarefa--descricao">
-          <h2 class="descricao__tarefa--titulo">${tarefa.titulo}</h2>
-          <p>${tarefa.descricao}</p>
+          <h2 class="descricao__tarefa--titulo">${titulo}</h2>
+          <p>${descricao}</p>
         </div>
       </div>
 
@@ -39,35 +33,50 @@ export function criarTarefa() {
       </button>
     `
 
-    const deleteButton = li.querySelector('.tarefa__botao-deletar')
-    deleteButton.addEventListener('click', () => deletarTarefa(tarefa.id))
+  const deleteButton = li.querySelector('.tarefa__botao-deletar')
+  deleteButton.addEventListener('click', () => deletarTarefa(id))
 
-    listaDeTarefas.appendChild(li)
-    alterarCorDaEtiquetaPrioridade()
-  })
-}
-//pegarTarefasDaApi()
-
-//deletarTarefaDaApi()
-export function deletarTarefa(id) {
-  const tarefas =  JSON.parse(localStorage.getItem('tarefas')) || []
-  const tarefasFiltradas = tarefas.filter((tarefa) => tarefa.id !== id)
-  localStorage.setItem('tarefas', JSON.stringify(tarefasFiltradas))
-
-  criarTarefa()
+  const etiquetaPrioridade = li.querySelector('.etiqueta__prioridade')
+  alterarCorDaEtiquetaPorPrioridade(etiquetaPrioridade)
+  
+  return li
 }
 
-function alterarCorDaEtiquetaPrioridade() {
-  const etiquetasPrioridade = document.querySelectorAll('.etiqueta__prioridade')
-  etiquetasPrioridade.forEach((prioridade) => {
-    if (prioridade.textContent.includes('Baixa')) {
-      prioridade.classList.add('etiqueta__prioridade--baixa')
-    } else if (prioridade.textContent.includes('Média')) {
-      prioridade.classList.add('etiqueta__prioridade--media')
-    } else {
-      prioridade.classList.add('etiqueta__prioridade--alta')
-    }
+export async function listarTarefasNaTela() {
+  const listaDeTarefasElemento = document.getElementById('listaDeTarefas')
+  listaDeTarefasElemento.innerHTML = ''
+
+  const tarefasDaApi = await pegarTarefasDaApi()
+
+  ordenarListaDeTarefasPorData(tarefasDaApi)
+  ordenarListaDeTarefasPorPrioridade(tarefasDaApi)
+
+  tarefasDaApi.forEach((tarefa) => {
+    const tarefaElemento = criarTarefa(
+      tarefa.id,
+      tarefa.titulo,
+      tarefa.descricao,
+      tarefa.prioridade,
+      tarefa.data,
+      tarefa.responsavel
+    )
+    listaDeTarefasElemento.appendChild(tarefaElemento)
   })
+}
+
+async function deletarTarefa(id) {
+  await deletarTarefaDaApi(id)
+  listarTarefasNaTela()
+}
+
+function alterarCorDaEtiquetaPorPrioridade(etiqueta) {
+  if (etiqueta.textContent.includes('Baixa')) {
+    etiqueta.classList.add('etiqueta__prioridade--baixa')
+  } else if (etiqueta.textContent.includes('Média')) {
+    etiqueta.classList.add('etiqueta__prioridade--media')
+  } else {
+    etiqueta.classList.add('etiqueta__prioridade--alta')
+  }
 }
 
 function ordenarListaDeTarefasPorPrioridade(tarefas) {

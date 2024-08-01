@@ -2,7 +2,7 @@ export async function pegarTarefasDaApi() {
     const resposta = await fetch('http://localhost:3000/tarefas') // fetch -> busca
     const dadosConvertidos = await resposta.json(resposta)
 
-    console.log(dadosConvertidos)
+    return dadosConvertidos
 }
 
 export async function postarTarefaNaApi(tituloTarefa, descricaoTarefa, prioridadeTarefa, dataTarefa, checkboxSelecionados) {
@@ -22,7 +22,7 @@ export async function postarTarefaNaApi(tituloTarefa, descricaoTarefa, prioridad
 }
 
 export async function deletarTarefaDaApi(id) {
-    await fecth(`http://localhost:3000/tarefas/${id}`, {
+    await fetch(`http://localhost:3000/tarefas/${id}`, {
         method: 'DELETE'
     })
 }
