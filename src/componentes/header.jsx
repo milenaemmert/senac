@@ -7,11 +7,17 @@ export function Header() {
         <nav>
           <ul className={s.links}>
             <li>
-              <a href='#' className={s.link}>Tarefas</a>
+              <a href='#'
+                className={s.link}>
+                Tarefas
+               </a>
             </li>
 
             <li>
-              <a href='#' className={s.link}>Adicionar Tarefa</a>
+              <a href='#'
+                className={s.link}>
+                Adicionar Tarefa
+               </a>
             </li>
           </ul>
         </nav>

@@ -1,12 +1,15 @@
-import { Formulario } from "./componentes/form/formulario"
-import { Header } from "./componentes/header"
+import { Formulario } from './componentes/form/formulario'
+import { Header } from './componentes/header'
+import s from './app.module.css'
 
 function App() {
   return (
-    <>
-      <Header />
-      <Formulario />
-    </>
+    <main className={s.adicionarTarefaTela}>
+      <div className={s.container}>
+        <Header />
+        <Formulario />
+      </div>
+    </main>
   )
 }
 
