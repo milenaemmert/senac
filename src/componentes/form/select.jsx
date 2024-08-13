@@ -1,25 +1,20 @@
-import { Field } from "formik";
+import { Field } from 'formik'
 import s from './select.module.css'
 
-export function Select(options) {
-    console.log(options)
-    return (
-        <div className={s.container}>
-            <label htmlFor="id" className={s.rotulo}>Prioridade</label>
-            {/* trocar o field por select, caso não queira usar Formik */}
-            <select>
-                {/* repetir essas options 3x com map, mas quero que vocês recebam as options das propriedades por props! */}
-                <option>
-                    Alta
-                </option>
-                <option>
-                    Média
-                </option>
-                <option>
-                    Baixa
-                </option>
-
-            </select>
-        </div>
-    )
+export function Select({ id, rotulo, options }) {
+  console.log(options)
+  return (
+    <div className={s.container}>
+      <label htmlFor={id} className={s.rotulo}>
+        {rotulo}
+      </label>
+      <Field as="select" id={id} className={s.select} name={id}>
+        {options.map((option) => (
+          <option key={option} value={option} disabled={option === 'Selecione'}>
+            {option}
+          </option>
+        ))}
+      </Field>
+    </div>
+  )
 }

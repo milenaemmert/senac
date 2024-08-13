@@ -4,22 +4,37 @@ import { Select } from './select'
 import { Input } from './input'
 import { Responsaveis } from './responsaveis'
 import { Textarea } from './textarea'
+import { Formik, Form } from 'formik'
 
 export function Formulario() {
-  return (
-    <form className={s.formulario}>
-      <div className={s.campos}>
-        <Input id="titulo" textoPlaceholder="Digite o rótulo da tarefa." />
-        <Select options={PRIORIDADES} />
-        <Input id="data" tipo="date" />
-      </div>
+  const valoresIniciais = {
+    titulo: '',
+    prioridade: 'Selecione',
+    data: '',
+    descricao: '',
+    responsaveis: []
+  }
 
-      <div className={s.campos}>
-        <Textarea
-          placeholder="Digite a descrição da tarefa"
-        />
-        <Responsaveis />
-      </div>
-    </form>
+  return (
+    <Formik
+      initialValues={valoresIniciais}
+    >
+      <Form className={s.formulario}>
+        <div className={s.campos}>
+          <Input
+            id="titulo"
+            rotulo="Título"
+            textoPlaceholder="Digite o rótulo da tarefa."
+          />
+          <Select id="prioridade" rotulo="Prioridade" options={PRIORIDADES} />
+          <Input id="data" rotulo="Data" tipo="date" />
+        </div>
+
+        <div className={s.campos}>
+          <Textarea id="descricao" rotulo="Descrição" placeholder="Digite a descrição da tarefa" />
+          <Responsaveis id="responsaveis" />
+        </div>
+      </Form>
+    </Formik>
   )
 }
