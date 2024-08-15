@@ -12,27 +12,55 @@ export function Formulario() {
     prioridade: 'Selecione',
     data: '',
     descricao: '',
-    responsaveis: []
+    responsaveis: [],
+  }
+
+  function pegarDadosDoFormulario(valores, {resetForm}) {
+    console.log(valores)
   }
 
   return (
-    <Formik
+    <Formik 
       initialValues={valoresIniciais}
+      onSubmit={pegarDadosDoFormulario}
     >
       <Form className={s.formulario}>
         <div className={s.campos}>
           <Input
-            id="titulo"
-            rotulo="Título"
-            textoPlaceholder="Digite o rótulo da tarefa."
-          />
+              id='titulo'
+              rotulo='Título'
+              placeholder='Digite o título da tarefa'
+            />
           <Select id="prioridade" rotulo="Prioridade" options={PRIORIDADES} />
-          <Input id="data" rotulo="Data" tipo="date" />
+          
+          <Input id='data' rotulo='Data' tipo='date' />
         </div>
 
         <div className={s.campos}>
-          <Textarea id="descricao" rotulo="Descrição" placeholder="Digite a descrição da tarefa" />
+          <Textarea
+            id="descricao"
+            rotulo="Descrição"
+            placeholder="Digite a descrição da tarefa"
+          />
           <Responsaveis id="responsaveis" />
+        </div>
+
+        <div className={s.controles}>
+          <button
+            className={`${s.botao} ${s.botaoLimpar}`}
+            type="button"
+            title="Limpar o formulário"
+          >
+            Limpar
+          </button>
+
+          <button
+            className={`${s.botao} ${s.botaoAdicionar}`}
+            type="submit"
+            title="Adicionar tarefa"
+          >
+            Adicionar
+          </button>
         </div>
       </Form>
     </Formik>

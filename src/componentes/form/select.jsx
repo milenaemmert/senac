@@ -2,7 +2,6 @@ import { Field } from 'formik'
 import s from './select.module.css'
 
 export function Select({ id, rotulo, options }) {
-  console.log(options)
   return (
     <div className={s.container}>
       <label htmlFor={id} className={s.rotulo}>
