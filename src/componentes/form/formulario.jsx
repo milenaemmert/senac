@@ -5,8 +5,8 @@ import { Formik, Form } from 'formik'
 import * as Yup from 'yup'
 
 /* 
-- Colocar mensagem de erro/validação
-- resetForm
+- Desafio: Colocar mensagem de erro/validação
+- Desafio: resetForm
 - Listar as tarefas na tela
 */
 

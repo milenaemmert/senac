@@ -1,3 +1,14 @@
+import { TAREFAS } from '../constantes/tarefa'
+import { Formulario, ListaDeTarefas } from '../componentes'
+import s from './adicionar-tarefa.module.css'
+
 export function AdicionarTarefa() {
-    return <h1>Adicionar tarefa - form</h1>
+    return (
+        <main className={s.adicionarTarefaTela}>
+        <div className={s.container}>
+            <Formulario />
+            <ListaDeTarefas tarefas={TAREFAS} titulo='Tarefas Recentes' />
+        </div>
+        </main>
+    )
 }
