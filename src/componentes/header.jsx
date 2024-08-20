@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom'
 import s from './header.module.css'
 
 export function Header() {
@@ -7,17 +8,11 @@ export function Header() {
         <nav>
           <ul className={s.links}>
             <li>
-              <a href='#'
-                className={s.link}>
-                Tarefas
-               </a>
+              <NavLink to='/' className={s.link}>Tarefas</NavLink>
             </li>
 
             <li>
-              <a href='#'
-                className={s.link}>
-                Adicionar Tarefa
-               </a>
+            <NavLink to='adicionar-tarefa' className={s.link}>Adicionar Tarefa</NavLink>
             </li>
           </ul>
         </nav>
