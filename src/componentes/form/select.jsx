@@ -1,4 +1,4 @@
-import { Field } from 'formik'
+import { ErrorMessage, Field } from 'formik'
 import s from './select.module.css'
 
 export function Select({ id, rotulo, options }) {
@@ -14,6 +14,8 @@ export function Select({ id, rotulo, options }) {
           </option>
         ))}
       </Field>
+
+      <ErrorMessage className={s.erro} name={id} component='span' />
     </div>
   )
 }

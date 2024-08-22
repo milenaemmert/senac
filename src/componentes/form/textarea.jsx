@@ -15,7 +15,7 @@ export function Textarea({ id, rotulo, placeholder }) {
         placeholder={placeholder}
       />
 
-      {/* <ErrorMessage name=''/> */}
+    <ErrorMessage className={s.erro} name={id} component='span' />
     </div>
   )
 }

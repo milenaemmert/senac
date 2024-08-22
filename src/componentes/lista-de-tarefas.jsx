@@ -23,7 +23,7 @@ export function ListaDeTarefas({ tarefas, titulo = 'Lista de Tarefas' }) {
 
     return <p className={s.nenhumaTarefa}>Nenhuma tarefa encontrada.</p>
   }
-
+  // ***Renderizar uma mensagem caso a lista esteja vazia
   return (
     <div className={s.listaDeTarefas}>
       <h1 className={s.titulo}>{titulo}</h1>

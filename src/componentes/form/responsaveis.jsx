@@ -1,4 +1,4 @@
-import { Field } from 'formik'
+import { ErrorMessage, Field } from 'formik'
 import { RESPONSAVEIS } from '../../constantes/responsaveis.js'
 import s from './responsaveis.module.css'
 
@@ -23,6 +23,8 @@ export function Responsaveis( { id }) {
           </div>
         ))}
       </div>
+
+      <ErrorMessage className={s.erro} name={id} component='span' />
     </div>
   )
 }

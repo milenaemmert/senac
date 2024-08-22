@@ -1,4 +1,4 @@
-import { Field } from 'formik'
+import { ErrorMessage, Field } from 'formik'
 import s from './input.module.css'
 
 export function Input({ id, rotulo, textoPlaceholder, tipo = 'text' }) {
@@ -17,6 +17,8 @@ export function Input({ id, rotulo, textoPlaceholder, tipo = 'text' }) {
           type={tipo}
         />
       </div>
+
+      <ErrorMessage className={s.erro} name={id} component='span' />
     </div>
   )
 }

@@ -1,6 +1,7 @@
 import { NavLink } from 'react-router-dom'
 import s from './header.module.css'
 
+// Adicionar classe para ficar claro em qual tela estou
 export function Header() {
   return (
     <header className={s.cabecalho}>
@@ -8,11 +9,17 @@ export function Header() {
         <nav>
           <ul className={s.links}>
             <li>
-              <NavLink to='/' className={s.link}>Tarefas</NavLink>
+              <NavLink 
+                className={({ isActive } ) => isActive ? `${s.link} ${s.linkAtivo}` : `${s.link}`} 
+                to='/' >
+                  Tarefas
+              </NavLink>
             </li>
 
             <li>
-            <NavLink to='adicionar-tarefa' className={s.link}>Adicionar Tarefa</NavLink>
+              <NavLink 
+              to='adicionar-tarefa'
+               className={({ isActive }) => isActive ? `${s.link} ${s.linkAtivo}` : `${s.link}`} >Adicionar Tarefa</NavLink>
             </li>
           </ul>
         </nav>
