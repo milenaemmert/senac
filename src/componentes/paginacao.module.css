@@ -1,0 +1,56 @@
+.paginacao {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.botaoNav {
+  color: var(--preto);
+  transition: transform 0.2s;
+}
+
+.botaoNav:disabled {
+  color: var(--cinza-silver);
+  cursor: default;
+}
+
+.botaoNav:hover:not(:disabled) {
+  transform: scale(1.2);
+}
+
+.botaoNavIcone {
+  width: 24px;
+}
+
+.botaoNavIconeAvancar {
+  transform: rotate(180deg);
+}
+
+.botoesPaginas {
+  display: flex;
+  gap: 8px;
+}
+
+.botaoPagina {
+  background-color: var(--branco);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  color: var(--preto);
+  font-size: 16px;
+  font-weight: 400;
+  transition: border-color 0.2s;
+}
+
+.botaoPagina:hover:not(.botaoPaginaAtual) {
+  border-color: var(--cinza-dusty-gray);
+}
+
+.botaoPaginaAtual {
+  background-color: var(--preto);
+  color: var(--branco);
+}

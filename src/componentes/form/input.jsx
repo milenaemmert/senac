@@ -1,4 +1,5 @@
 import { ErrorMessage, Field } from 'formik'
+import { lupa } from '../../assets/icones'
 import s from './input.module.css'
 
 export function Input({ id, rotulo, textoPlaceholder, tipo = 'text' }) {
@@ -16,6 +17,17 @@ export function Input({ id, rotulo, textoPlaceholder, tipo = 'text' }) {
           placeholder={textoPlaceholder}
           type={tipo}
         />
+
+        {tipo === 'search' ? (
+            <button>
+              {lupa(s.botaoPesquisaIcone)}
+            </button>
+          )
+          :
+          null
+        }
+
+        
       </div>
 
       <ErrorMessage className={s.erro} name={id} component='span' />
