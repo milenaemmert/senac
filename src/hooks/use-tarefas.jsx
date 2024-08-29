@@ -1,15 +1,25 @@
 import axios from "axios"
+import { useState } from "react"
 
 export function UseTarefas() {
-    //get
-    //post
-    //deletar
+    const [tarefas, setTarefas] = useState([]) 
+    const [paginacao, setpaginacao] = useState(null)
+    const[paginaAtual, setPaginaAtual] = useState(1)
 
-    function pegarTarefasDaAPi() {
+
+    function pegarTarefasDaAPi(tarefasPorPagina = 3) {
         try {
-            const resposta = axios.get('')
-        } catch(erro) {
+            const resposta = axios.get('http://localhost:3000/tarefas', {
+                params: {_page: paginaAtual, _per_page: tarefasPorPagina}
+            })
 
+            console.log(resposta.data)
+
+            const {data, ...restoDaResposta} = resposta.data
+            setTarefas(data)
+            setpaginacao(restoDaResposta)
+        } catch(erro) {
+            window.alert(erro)
         }
     }
 
@@ -28,6 +38,4 @@ export function UseTarefas() {
 
         }
     }
-
-
 }
