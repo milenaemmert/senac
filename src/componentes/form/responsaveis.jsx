@@ -1,8 +1,8 @@
-import { ErrorMessage, Field } from 'formik'
-import { RESPONSAVEIS } from '../../constantes/responsaveis.js'
+import { Field, ErrorMessage } from 'formik'
+import { RESPONSAVEIS } from '../../constantes'
 import s from './responsaveis.module.css'
 
-export function Responsaveis( { id }) {
+export function Responsaveis({ id }) {
   return (
     <div className={s.container}>
       <label className={s.rotuloContainer}>Responsáveis</label>
@@ -13,7 +13,7 @@ export function Responsaveis( { id }) {
             <Field
               id={responsavel}
               name={id}
-              type="checkbox"
+              type='checkbox'
               value={responsavel}
             />
 

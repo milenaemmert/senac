@@ -6,7 +6,7 @@ export const TAREFAS = [
       'Revisar bugs críticos no módulo principal. Revisar bugs críticos no módulo principal. Revisar bugs críticos no módulo principal.',
     prioridade: 'Alta',
     data: '12/12/2012',
-    responsaveis: ['Clodomilson']
+    responsaveis: ['Clodomilson'],
   },
   {
     id: '2ddf',
@@ -14,7 +14,7 @@ export const TAREFAS = [
     descricao: 'Adicionar sistema de login seguro.',
     prioridade: 'Média',
     data: '12/12/2012',
-    responsaveis: ['Luísa', 'Fabiano']
+    responsaveis: ['Luísa', 'Fabiano'],
   },
   {
     id: '93a4',
@@ -23,6 +23,6 @@ export const TAREFAS = [
       'Garantir que o site funciona em todos os dispositivos. Garantir que o site funciona em todos os dispositivos. Garantir que o site funciona em todos os dispositivos. Garantir que o site funciona em todos os dispositivos.',
     prioridade: 'Baixa',
     data: '12/12/2012',
-    responsaveis: ['Alice']
-  }
-  ]
+    responsaveis: ['Alice'],
+  },
+]

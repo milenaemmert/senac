@@ -1,12 +1,11 @@
 .tarefasTela {
-    composes: tela from global;
-    padding: 48px 0;
-  }
-  
-  .container {
-    composes: container from global;
-    display: flex;
-    flex-direction: column;
-    gap: 48px;
-  }
-  
+  composes: tela from global;
+  padding: 48px 0;
+}
+
+.container {
+  composes: container from global;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}

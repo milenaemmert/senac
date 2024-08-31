@@ -1,7 +1,6 @@
 import { NavLink } from 'react-router-dom'
 import s from './header.module.css'
 
-// Adicionar classe para ficar claro em qual tela estou
 export function Header() {
   return (
     <header className={s.cabecalho}>

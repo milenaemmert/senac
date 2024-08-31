@@ -1,15 +1,20 @@
-import { Tarefa } from './'
+import { Carregando, Tarefa, Paginacao } from './'
 import s from './lista-de-tarefas.module.css'
-import { Paginacao } from './paginacao'
 
 export function ListaDeTarefas({
-  tarefas,
   titulo = 'Lista de Tarefas',
+  tarefas,
+  carregando,
   paginacao,
   paginaAtual,
-  aoMudarDePagina,
+  aoMudarPagina,
+  aoDeletarTarefa
 }) {
   function renderizarTarefas() {
+    if (carregando) {
+      return <Carregando />
+    }
+
     if (tarefas.length > 0) {
       return (
         <>
@@ -23,6 +28,7 @@ export function ListaDeTarefas({
                 prioridade={tarefa.prioridade}
                 data={tarefa.data}
                 responsaveis={tarefa.responsaveis}
+                aoDeletarTarefa={aoDeletarTarefa}
               />
             ))}
           </ul>
@@ -30,10 +36,10 @@ export function ListaDeTarefas({
           {paginacao ? (
             <Paginacao
               paginaAtual={paginaAtual}
-              totalDePaginas=""
-              paginaAnterior=""
-              proximaPagina=""
-              aoMudarPagina={aoMudarDePagina} 
+              totalDePaginas={paginacao.pages}
+              paginaAnterior={paginacao.prev}
+              proximaPagina={paginacao.next}
+              aoMudarPagina={aoMudarPagina}
             />
           ) : null}
         </>

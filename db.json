@@ -1,78 +1,55 @@
 {
-    "tarefas": [
-      {
-        "id": "1722982572805",
-        "titulo": "1. Revisar código crítico",
-        "descricao": "Revisar bugs críticos no módulo principal. Revisar bugs críticos no módulo principal. Revisar bugs críticos no módulo principal.",
-        "prioridade": "Alta",
-        "data": "12/12/2012",
-        "responsaveis": [
-          "Clodomilson"
-        ]
-      },
-      {
-        "id": "1722982572808",
-        "titulo": "2. Implementar autenticação de forma segura",
-        "descricao": "Adicionar sistema de login seguro.",
-        "prioridade": "Média",
-        "data": "12/12/2012",
-        "responsaveis": [
-          "Luísa",
-          "Fabiano"
-        ]
-      },
-      {
-        "id": "1722982572810",
-        "titulo": "3. Revisar design responsivo",
-        "descricao": "Garantir que o site funciona em todos os dispositivos. Garantir que o site funciona em todos os dispositivos. Garantir que o site funciona em todos os dispositivos. Garantir que o site funciona em todos os dispositivos.",
-        "prioridade": "Baixa",
-        "data": "12/12/2012",
-        "responsaveis": [
-          "Alice"
-        ]
-      },
-      {
-        "id": "1722982572812",
-        "titulo": "4. Revisar bugs no site",
-        "descricao": "Precisamos ter certeza de que o site estará rodando da melhor maneira possível.",
-        "prioridade": "Alta",
-        "data": "12/12/2012",
-        "responsaveis": [
-          "Clodomilson",
-          "Douglas"
-        ]
-      },
-      {
-        "id": "1722982572815",
-        "titulo": "5. Implementar autenticação de forma segura",
-        "descricao": "Adicionar sistema de login seguro.",
-        "prioridade": "Média",
-        "data": "12/12/2012",
-        "responsaveis": [
-          "Milena",
-          "Douglas"
-        ]
-      },
-      {
-        "id": "1722982572820",
-        "titulo": "6. Revisar design responsivo",
-        "descricao": "Garantir que o site funciona em todos os dispositivos. Garantir que o site funciona em todos os dispositivos. Garantir que o site funciona em todos os dispositivos. Garantir que o site funciona em todos os dispositivos.",
-        "prioridade": "Alta",
-        "data": "12/12/2012",
-        "responsaveis": [
-          "Alice"
-        ]
-      },
-      {
-        "id": "1722982572840",
-        "titulo": "7. Implementar autenticação de forma segura",
-        "descricao": "Adicionar sistema de login seguro.",
-        "prioridade": "Média",
-        "data": "12/12/2012",
-        "responsaveis": [
-          "Milena",
-          "Douglas"
-        ]
-      }
-    ]
-  }
+  "tarefas": [
+    {
+      "id": "1722982572805",
+      "titulo": "1. Revisar código crítico",
+      "descricao": "Revisar bugs críticos no módulo principal. Revisar bugs críticos no módulo principal. Revisar bugs críticos no módulo principal.",
+      "prioridade": "Alta",
+      "data": "12/12/2012",
+      "responsaveis": [
+        "Valtemir"
+      ]
+    },
+    {
+      "id": "1722982572808",
+      "titulo": "2. Implementar autenticação de forma segura",
+      "descricao": "Adicionar sistema de login seguro.",
+      "prioridade": "Média",
+      "data": "12/12/2012",
+      "responsaveis": [
+        "Willian",
+        "André"
+      ]
+    },
+    {
+      "id": "1722982572810",
+      "titulo": "3. Revisar design responsivo",
+      "descricao": "Garantir que o site funciona em todos os dispositivos. Garantir que o site funciona em todos os dispositivos. Garantir que o site funciona em todos os dispositivos. Garantir que o site funciona em todos os dispositivos.",
+      "prioridade": "Baixa",
+      "data": "12/12/2012",
+      "responsaveis": [
+        "André"
+      ]
+    },
+    {
+      "id": "1722982572812",
+      "titulo": "4. Revisar bugs no site",
+      "descricao": "Precisamos ter certeza de que o site estará rodando da melhor maneira possível.",
+      "prioridade": "Alta",
+      "data": "12/12/2012",
+      "responsaveis": [
+        "Clodomilson"
+      ]
+    },
+    {
+      "id": "1722982572815",
+      "titulo": "5. Implementar autenticação de forma segura",
+      "descricao": "Adicionar sistema de login seguro.",
+      "prioridade": "Média",
+      "data": "12/12/2012",
+      "responsaveis": [
+        "Milena"
+      ]
+    }
+  ]
+}

@@ -1,7 +1,19 @@
 import { lixeira } from '../assets/icones'
+import { useTarefas } from '../hooks'
+import { Carregando } from './'
 import s from './tarefa.module.css'
 
-export function Tarefa({ id, titulo, descricao, prioridade, data, responsaveis }) {
+export function Tarefa({
+  id,
+  titulo,
+  descricao,
+  prioridade,
+  data,
+  responsaveis,
+  aoDeletarTarefa
+}) {
+  const { carregando, deletarTarefa } = useTarefas()
+
   function definirCorEtiqueta() {
     if (prioridade === 'Alta') {
       return s.prioridadeAlta
@@ -14,6 +26,12 @@ export function Tarefa({ id, titulo, descricao, prioridade, data, responsaveis }
 
   return (
     <li className={s.tarefa}>
+      {carregando ? (
+        <div className={s.filtro}>
+          <Carregando />
+        </div>
+      ) : null}
+
       <div className={s.conteudo}>
         <div className={s.etiquetas}>
           <div
@@ -41,7 +59,10 @@ export function Tarefa({ id, titulo, descricao, prioridade, data, responsaveis }
         className={s.botaoDeletar}
         type='button'
         title='Deletar tarefa'
-        onClick={() => console.log(id)}
+        onClick={async () => {
+          await deletarTarefa(id)
+          aoDeletarTarefa()
+        }}
       >
         {lixeira(s.botaoDeletarIcone)}
       </button>

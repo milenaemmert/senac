@@ -1,20 +1,19 @@
 import { Routes, Route } from 'react-router-dom'
-import { Header } from './componentes/header'
-import { AdicionarTarefa } from './telas/adicionar-tarefa.tela'
-import { TarefasTela } from './telas/tarefas.tela'
+import { TarefasTela, AdicionarTarefaTela } from './telas'
+import { Cabecalho, Rodape } from './componentes'
 
-function App() {
+export default function App() {
   return (
     <>
-      <Header />
+      <Cabecalho />
 
       <Routes>
         <Route path='/' element={<TarefasTela />} />
-        <Route path='/adicionar-tarefa' element={<AdicionarTarefa />} />
+        <Route path='/adicionar-tarefa' element={<AdicionarTarefaTela />} />
         <Route path='*' element={<TarefasTela />} />
       </Routes>
+
+      <Rodape />
     </>
   )
 }
-
-export default App

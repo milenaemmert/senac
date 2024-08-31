@@ -1,1 +1,1 @@
-export const PRIORIDADES = ['Selecione', 'Alta', 'Média', 'Baixa']
+export const PRIORIDADES = ['Alta', 'Média', 'Baixa']

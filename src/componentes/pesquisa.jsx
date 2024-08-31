@@ -4,7 +4,7 @@ import { Input } from './'
 export function Pesquisa() {
   function pegarValorDaPesquisa(values) {
     if (!values.pesquisa) return
-    //console.log(values.pesquisa)
+    console.log(values.pesquisa)
   }
 
   return (

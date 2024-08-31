@@ -11,44 +11,44 @@ export function Paginacao({
   return (
     <div className={s.paginacao}>
       <button
-        type="button"
         className={s.botaoNav}
-        title="Página anterior"
+        type='button'
+        title='Página anterior'
         disabled={!paginaAnterior}
-        onclick={() => aoMudarPagina(paginaAnterior)}
+        onClick={() => aoMudarPagina(paginaAnterior)}
       >
         {seta(s.botaoNavIcone)}
       </button>
 
       <div className={s.botoesPaginas}>
-        {
-           Array.from({ length: totalDePaginas }, (_, index) => {
-                const pagina = index + 1
+        {Array.from({ length: totalDePaginas }, (_, index) => {
+          const pagina = index + 1
 
-                const definirBotaoAtual = pagina = paginaAtual ? s.botaoPaginaAtual : null
+          const definirBotaoAtual =
+            pagina === paginaAtual ? s.botaoPaginaAtual : null
 
-                return (
-                    <button
-                        type="button"
-                        className={`${s.botaoPagina} ${definirBotaoAtual}`}
-                        title={`Ir para a página ${pagina}`}
-                        disabled={!paginaAnterior}
-                        onclick={() => aoMudarPagina(pagina)}
-                    >
-                        {pagina}
-                    </button>
-                )
+          return (
+            <button
+              key={pagina}
+              className={`${s.botaoPagina} ${definirBotaoAtual}`}
+              type='button'
+              title={`Ir para a página ${pagina}`}
+              onClick={() => aoMudarPagina(pagina)}
+            >
+              {pagina}
+            </button>
+          )
         })}
       </div>
 
       <button
-        type="button"
         className={s.botaoNav}
-        title="Próxima página"
+        type='button'
+        title='Próxima página'
         disabled={!proximaPagina}
-        onclick={() => aoMudarPagina(proximaPagina)}
+        onClick={() => aoMudarPagina(proximaPagina)}
       >
-        {seta(`${s.botaoNavIcone} ${botaoNavIconeAvancar}`)}
+        {seta(`${s.botaoNavIcone} ${s.botaoNavIconeAvancar}`)}
       </button>
     </div>
   )

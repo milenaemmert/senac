@@ -1,10 +1,12 @@
-export * from './header'
+export * from './rodape'
+export * from './cabecalho'
+export * from './carregando'
+export * from './lista-de-tarefas'
+export * from './tarefa'
+export * from './paginacao'
+export * from './pesquisa'
 export * from './form/formulario'
 export * from './form/input'
-export * from './form/responsaveis'
 export * from './form/select'
 export * from './form/textarea'
-export * from './tarefa'
-export * from './lista-de-tarefas'
-
-
+export * from './form/responsaveis'

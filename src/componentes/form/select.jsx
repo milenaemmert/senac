@@ -1,15 +1,16 @@
-import { ErrorMessage, Field } from 'formik'
+import { Field, ErrorMessage } from 'formik'
 import s from './select.module.css'
 
 export function Select({ id, rotulo, options }) {
   return (
     <div className={s.container}>
-      <label htmlFor={id} className={s.rotulo}>
+      <label className={s.rotulo} htmlFor={id}>
         {rotulo}
       </label>
-      <Field as="select" id={id} className={s.select} name={id}>
+
+      <Field id={id} className={s.select} name={id} as='select'>
         {options.map((option) => (
-          <option key={option} value={option} disabled={option === 'Selecione'}>
+          <option key={option} value={option}>
             {option}
           </option>
         ))}
