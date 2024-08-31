@@ -1,8 +1,22 @@
-# React + Vite
+# To do list em React para Senac
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+```
+npm install
+```
+```
+npm run dev
+```
+```
+json-server --watch db.json
+```
 
-Currently, two official plugins are available:
+Conceitos explorados:
+→ Validações com Formik e Yup
+→ Hooks mais utilizados e hooks avançados/personalizados
+→ Prop drilling
+→ Gerenciamento de Rotas com React Router
+→ Paginação
+→ Ordenação de elementos
+→ Aviso de loading
+→ Requisição com AXIOS
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
