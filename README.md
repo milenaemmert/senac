@@ -9,14 +9,14 @@ npm run dev
 ```
 json-server --watch db.json
 ```
-
-Conceitos explorados:
-→ Validações com Formik e Yup
-→ Hooks mais utilizados e hooks avançados/personalizados
-→ Prop drilling
-→ Gerenciamento de Rotas com React Router
-→ Paginação
-→ Ordenação de elementos
-→ Aviso de loading
-→ Requisição com AXIOS
+<br><br>
+<b>Conceitos explorados:</b><br><br>
+→ Validações com Formik e Yup <br>
+→ Hooks mais utilizados e hooks avançados/personalizados<br>
+→ Prop drilling<br>
+→ Gerenciamento de Rotas com React Router<br>
+→ Paginação<br>
+→ Ordenação de elementos<br>
+→ Aviso de loading<br>
+→ Requisição com AXIOS<br>
 
