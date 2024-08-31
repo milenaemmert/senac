@@ -13,6 +13,7 @@ export function TarefasTela() {
     mudarPagina
   } = useTarefas() //utilização do hook criado para lidar com as requisições API
 
+  //chamar dentro do useEffect com o array de dependência olhando para paginaAtual, para que na montagem desse componente e também quando a página é trocada as tarefas sejam mostradas/atualizadas na tela
   useEffect(() => {
     atualizarTarefas()
   }, [paginaAtual])

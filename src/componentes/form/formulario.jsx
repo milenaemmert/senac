@@ -16,7 +16,6 @@ export function Formulario({ aoAdicionarTarefa }) {
     responsaveis: []
   }
 
-  //
   const validacoes = Yup.object({
     titulo: Yup.string().required('O título é obrigatório.'),
     prioridade: Yup.string().oneOf(

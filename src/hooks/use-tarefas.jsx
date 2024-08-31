@@ -2,9 +2,9 @@ import { useState } from 'react'
 import axios from 'axios'
 
 export function useTarefas() {
-  const [tarefas, setTarefas] = useState([])
-  const [carregando, setCarregando] = useState(false)
-  const [paginacao, setPaginacao] = useState(null)
+  const [tarefas, setTarefas] = useState([]) //onde as tarefas que forem retornadas pelo endpoint serão guardadas
+  const [carregando, setCarregando] = useState(false) //será true enquanto uma requisição está sendo feita 
+  const [paginacao, setPaginacao] = useState(null) //
   const [paginaAtual, setPaginaAtual] = useState(1)
 
   async function pegarTarefasPaginadas(tarefasPorPagina = 3) {
@@ -12,17 +12,17 @@ export function useTarefas() {
 
     try {
       const resposta = await axios.get('http://localhost:3000/tarefas', {
-        params: { _page: paginaAtual, _per_page: tarefasPorPagina }
+        params: { _page: paginaAtual, _per_page: tarefasPorPagina } //com esses parâmetros o json server entende que a resposta deve ser paginada
       })
 
       console.log(resposta.data)
 
-      const { data, ...restoDaResposta } = resposta.data
+      const { data, ...restoDaResposta } = resposta.data //pega a resposta do endpoint e separa em dois: primeiro as tarefas da página, e depois as informações da paginação
 
-      setTarefas(data)
-      setPaginacao(restoDaResposta)
+      setTarefas(data) //populando o state de tarefas
+      setPaginacao(restoDaResposta) //populando o state de paginação
     } catch (erro) {
-      window.alert(erro.response?.data?.message || erro.message)
+      window.alert(erro.response?.data?.message || erro.message) //mostrar o erro de requisição (caso exista)
     } finally {
       setCarregando(false)
     }
@@ -33,7 +33,7 @@ export function useTarefas() {
 
     try {
       const resposta = await axios.get('http://localhost:3000/tarefas', {
-        params: { _sort: '-id', _limit: quantidade }
+        params: { _sort: '-id', _limit: quantidade } //sort é a maneira que o json server permite ordenar uma lista, -id para que seja decrescente
       })
 
       setTarefas(resposta.data)
@@ -68,6 +68,7 @@ export function useTarefas() {
     }
   }
 
+   //quando clicar na seta de mudar a página, a função abaixo é chamada
   function mudarPagina(pagina) {
     setPaginaAtual(pagina)
   }

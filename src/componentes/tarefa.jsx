@@ -60,8 +60,8 @@ export function Tarefa({
         type='button'
         title='Deletar tarefa'
         onClick={async () => {
-          await deletarTarefa(id)
-          aoDeletarTarefa()
+          await deletarTarefa(id) //para deletar do "banco"
+          aoDeletarTarefa() //para excluir a tarefa da tela
         }}
       >
         {lixeira(s.botaoDeletarIcone)}
